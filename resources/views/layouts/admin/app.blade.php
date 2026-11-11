@@ -37,10 +37,9 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
-    {{-- Start CSS --}}
-    <!-- Volt CSS -->
+    {{-- Start Css --}}
     @include('layouts.admin.css')
-    {{-- End CSS --}}
+    {{-- End Css --}}
 
 </head>
 
@@ -48,25 +47,25 @@
     {{-- Start Sidebar --}}
     @include('layouts.admin.sidebar')
     {{-- End Sidebar --}}
+
     <main class="content">
 
         {{-- Start Header --}}
-       @include('layouts.admin.header')
+        @include('layouts.admin.header')
         {{-- End Header --}}
 
         {{-- Start Main Content --}}
         @yield('content')
         {{-- End Main Content --}}
 
-        {{-- Start Footer --}}
+        {{-- Start footer --}}
         @include('layouts.admin.footer')
         {{-- End Footer --}}
     </main>
 
     {{-- Start Js --}}
     @include('layouts.admin.js')
-    {{-- End JS  --}}
+    {{-- End Js --}}
 </body>
 
 </html>
-

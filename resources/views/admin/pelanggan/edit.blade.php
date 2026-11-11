@@ -23,7 +23,8 @@
                 <p class="mb-0">Form untuk menambahkan data pelanggan baru.</p>
             </div>
             <div>
-                <a href="" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
+                <a href="{{ route('pelanggan.index') }}" class="btn btn-primary"><i class="far fa-question-circle me-1"></i>
+                    Kembali</a>
             </div>
         </div>
     </div>
@@ -64,10 +65,13 @@
                                 <div class="mb-3">
                                     <label for="gender" class="form-label">Gender</label>
                                     <select id="gender" name="gender" class="form-select" name="gender">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
+                                        <option selected>GENDER</option>
+                                        <option value="Male" {{ $dataPelanggan->gender == 'Male' ? 'selected' : '' }}>Male
+                                        </option>
+                                        <option value="Female" {{ $dataPelanggan->gender == 'Female' ? 'selected' : '' }}>
+                                            Female</option>
+                                        <option value="Other" {{ $dataPelanggan->gender == 'Other' ? 'selected' : '' }}>
+                                            Other</option>
                                     </select>
                                 </div>
                             </div>
@@ -83,13 +87,13 @@
                                 <!-- Phone -->
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" id="phone" class="form-control" name="phone"
-                                        value="{{ $dataPelanggan->phone }}">
+                                    <input type="text" id="phone" class="form-control"
+                                        value="{{ $dataPelanggan->phone }}" name="phone">
                                 </div>
 
                                 <!-- Buttons -->
                                 <div class="">
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="submit" class="btn btn-info">Simpan</button>
                                     <a href="{{ route('pelanggan.index') }}"
                                         class="btn btn-outline-secondary ms-2">Batal</a>
                                 </div>
